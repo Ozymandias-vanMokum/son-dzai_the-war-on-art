@@ -302,8 +302,22 @@ export class CatawikiAgent {
   }
 
   private parsePrice(text: string): number {
-    // Remove currency symbols and parse
-    const cleaned = text.replace(/[€$£,\s]/g, '').replace(',', '.');
+    // Handle European format (1.234,56) and US format (1,234.56)
+    // Remove currency symbols and spaces first
+    let cleaned = text.replace(/[€$£\s]/g, '');
+    
+    // Determine if comma or period is the decimal separator
+    const lastComma = cleaned.lastIndexOf(',');
+    const lastPeriod = cleaned.lastIndexOf('.');
+    
+    if (lastComma > lastPeriod) {
+      // European format: 1.234,56 -> remove periods, replace comma with period
+      cleaned = cleaned.replace(/\./g, '').replace(',', '.');
+    } else {
+      // US format: 1,234.56 -> just remove commas
+      cleaned = cleaned.replace(/,/g, '');
+    }
+    
     const price = parseFloat(cleaned);
     return isNaN(price) ? 0 : price;
   }
