@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "war-on-art-report": {
+      "command": "python3",
+      "args": ["mcp_server.py"],
+      "description": "MCP server providing access to The War on Art analysis report",
+      "capabilities": {
+        "resources": true,
+        "tools": true
+      }
+    }
+  }
+}
