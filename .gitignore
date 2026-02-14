@@ -1,3 +1,6 @@
+# Node modules
+node_modules/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -10,7 +13,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/ -- Keeping dist for the MCP server compiled output
 downloads/
 eggs/
 .eggs/
