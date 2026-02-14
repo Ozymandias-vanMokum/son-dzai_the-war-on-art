@@ -13,6 +13,10 @@ This repository provides access to The War on Art analysis report through a Mode
 - `mcp.json` - MCP server configuration for Cursor
 - `requirements.txt` - Python dependencies (none required for basic functionality)
 
+## Quick Start
+
+See [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide to set up and test the MCP server with Cursor.
+
 ## Setup for Cursor AI Agent
 
 ### Option 1: Using mcp.json (Recommended)
