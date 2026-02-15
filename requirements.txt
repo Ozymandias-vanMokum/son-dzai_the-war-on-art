@@ -1,0 +1,5 @@
+numpy
+pandas
+playwright
+mcp
+matplotlib
