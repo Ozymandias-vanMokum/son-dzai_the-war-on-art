@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "war-on-art": {
+      "command": "python",
+      "args": ["mcp_server/server.py"],
+      "env": {},
+      "description": "War on Art -- Catawiki auction strategy engine. Provides tools to configure auctions, monitor live state, evaluate strategy, place bids, and run full autopilot."
+    }
+  }
+}
