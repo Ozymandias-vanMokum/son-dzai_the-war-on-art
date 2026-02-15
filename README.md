@@ -1,6 +1,25 @@
 # The War on Art
 
-An autonomous auction bidding engine for [Catawiki](https://www.catawiki.com), built on game theory, Go strategy, and reinforcement learning. The system observes a live auction, makes tactical decisions (Wait, Act, or Abandon), and executes bids through browser automation -- all within the budget and risk tolerance you define.
+*by Son Dzai*
+
+> *"The supreme art of war is to subdue the enemy without fighting."*
+> -- Sun Tzu, The Art of War
+
+Inspired by Sun Tzu's brilliant writing *The Art of War*, this is its mirror image: **The War on Art**. Where the ancient strategist wrote about armies and terrain, Son Dzai -- a name forged from the same letters as its creator, Ozymandias -- applies those principles to a different battlefield: the final seconds of an online art auction.
+
+**The War on Art** is an intelligent and strategic agent with a single intent: win every Catawiki auction where the human-in-the-loop bidder has mandated the agent to partake in.
+
+The architecture separates the **Strategic Mind** from the **Mechanical Hand**. The mind is the decision engine -- a matrix of game theory, Go strategy (Sente and Gote -- initiative and response), and Q-learning reinforcement that decides *when* to strike, *how hard*, and *when to walk away*. The hand is the browser automation that reads the auction state and clicks the bid button when the mind commands it.
+
+Between them sits a protocol: **Wait, Act, or Abandon.** The agent conceals its intent for days, observes the enemy's patterns, and strikes only in the Dead Zone -- the final 15 seconds where Catawiki's timer-reset mechanic turns the auction into a war of attrition. Jump-bids break psychological round-number barriers. The Ozymandias Offset ensures we never bid a round figure. And after every battle, win or lose, the agent's memory updates -- learning which tactics work for Codruta's style and adapting its strategy for the next fight.
+
+The human stays in the loop. Codruta provides four inputs -- a lot URL, a budget in euros, a greediness factor from 0 to 100 (where 100 means "whatever it takes within budget"), and her login session. The agent handles the rest. When the greediness is low, it bids conservatively. When it's high, it deploys intimidation tactics. When the budget is exceeded, it retreats with discipline. No exceptions.
+
+The reinforcement learning module (a Q-learning implementation) treats each auction as an episode, each bid as an action, and the outcome as a reward signal. Over time, the Q-table converges on the optimal balance between standard engagement and aggressive jump-bids -- the agent literally teaches itself to meet Codruta's demands better with every auction it fights.
+
+The MCP server wraps the entire system as a set of tools that any AI agent -- Claude, or whatever comes next -- can call to orchestrate the bidding. Or Codruta can run the Jupyter notebook directly, watch the battle log scroll in real time, and pull the plug whenever she wants.
+
+---
 
 ## How It Works
 
