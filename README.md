@@ -62,9 +62,13 @@ playwright install chromium
 
 The `playwright install chromium` step downloads the Chromium browser binary that the program uses to interact with Catawiki. This is a one-time download (~150 MB).
 
-### 2. Run the program (Jupyter Notebook)
+### 2. Run the program
 
-This is the primary way to run The War on Art. The notebook walks you through every step with clear instructions.
+Open the repo in **VS Code**, **Cursor**, or any editor with Jupyter support. Both VS Code and Cursor have built-in notebook rendering -- install the **Jupyter** extension if prompted.
+
+Open `notebooks/war_room.ipynb`. Select a Python kernel (top right corner) that points to the environment where you installed the requirements. Run cells with **Shift+Enter**.
+
+Alternatively, launch from the terminal:
 
 ```bash
 jupyter notebook notebooks/war_room.ipynb
@@ -156,7 +160,8 @@ The MCP server exposes 9 tools:
 
 | Situation | Action |
 |---|---|
-| **Notebook autopilot running** | Press the **Stop/Interrupt** button in Jupyter (square icon), or hit `Ctrl+C` in the terminal. The monitor catches the cancellation and logs `ABORT`. |
+| **Notebook running in VS Code / Cursor** | Click the **Interrupt** button (square icon) next to the running cell, or press `Ctrl+C` in the integrated terminal. The monitor catches the cancellation and logs `ABORT`. |
+| **Notebook running in browser (Jupyter)** | Click the **Stop** button (square icon) in the toolbar, or press `I I` (press I twice) in command mode. |
 | **MCP autopilot running** | Call the `stop_autopilot` tool. The monitor sets `_running = False` and the polling loop exits on the next tick. |
 | **Budget exceeded** | Automatic. The engine returns `ABANDON` and the loop stops itself. No bid is placed. |
 | **Browser window stuck** | Close the Chromium window manually. The monitor will catch the exception and stop. |
