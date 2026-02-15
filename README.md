@@ -118,7 +118,17 @@ The program automatically calculates the **True Ceiling** (Ozymandias Offset): i
 
 **Step 4 -- Review results** (Cells 12-13). Print the full battle log and updated learner statistics, then close the browser.
 
-### 3. Run the program (MCP Server -- for AI agents)
+### 3. Run the program (CLI Script)
+
+If you prefer the terminal over notebooks:
+
+```bash
+python run_auction.py
+```
+
+The script prompts you for the lot URL, budget, and greediness level, shows a configuration summary, and then launches the full auction loop. Press `Ctrl+C` to abort at any time.
+
+### 4. Run the program (MCP Server -- for AI agents)
 
 If you want Claude or another AI agent to orchestrate the bidding:
 
@@ -217,6 +227,7 @@ son-dzai_the-war-on-art/
 |-- notebooks/
 |   |-- war_room.ipynb           # Simulation + Live Auction Control Panel
 |
+|-- run_auction.py               # CLI entry point (interactive terminal alternative)
 |-- requirements.txt             # numpy, pandas, playwright, mcp, matplotlib
 |
 |-- (runtime, gitignored)
