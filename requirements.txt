@@ -3,3 +3,9 @@ pandas
 playwright
 mcp
 matplotlib
+# Notion webhook server
+anthropic
+fastapi
+uvicorn[standard]
+httpx
+python-dotenv
