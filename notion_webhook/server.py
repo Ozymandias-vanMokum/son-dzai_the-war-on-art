@@ -191,6 +191,11 @@ async def notion_webhook(request: Request) -> JSONResponse:
 
     logger.info("Webhook received: %s", json.dumps(body)[:400])
 
+    # Notion API webhook verification handshake
+    if "verification_token" in body:
+        logger.info("Verification handshake received")
+        return JSONResponse({"verification_token": body["verification_token"]})
+
     # Notion automation webhooks wrap page data under a "data" key
     data = body.get("data", body)
     page_id = data.get("id", "").replace("-", "")
